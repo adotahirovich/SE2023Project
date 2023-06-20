@@ -1,0 +1,9 @@
+require("dotenv").config();
+
+const config = {
+  mongo: process.env.MONGO || "mongodb+srv://anllq:sarajevo@cluster0.8we04.mongodb.net/?retryWrites=true&w=majority",
+  port: process.env.PORT || 5001,
+  secret: process.env.JWT_SECRET || "Your secret key",
+};
+
+export default config;

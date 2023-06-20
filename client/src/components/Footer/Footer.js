@@ -13,7 +13,7 @@ export default function Footer() {
         zIndex: "-999",
       }}
     >
-      <p></p>
+      <p>Project by Anel</p>
     </footer>
   );
 }

@@ -1,8 +1,3 @@
-import React from "react";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import apiServices from "../../api/api-user";
-import theme from "../../theme";
 import {
   Button,
   Card,
@@ -18,38 +13,26 @@ import {
   Typography,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
+import React from "react";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import apiServices from "../../api/api-user";
+import theme from "../../theme";
 
 const useStyles = makeStyles({
   card: {
     maxWidth: 600,
     margin: "auto",
-    marginTop: theme.spacing(5),
-    marginBottom: theme.spacing(2),
-    padding: theme.spacing(2),
     textAlign: "center",
-    backgroundColor: theme.palette.background.default,
-    borderRadius: theme.spacing(1),
-    boxShadow:
-      "0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)",
-  },
-  formContainer: {
-    margin: "0 auto",
-    textAlign: "left",
+    marginTop: theme.spacing(5),
+    paddingBottom: theme.spacing(2),
   },
   error: {
     verticalAlign: "middle",
   },
   title: {
-    marginTop: theme.spacing(0),
-    color: theme.palette.common.white,
-  },
-  header: {
-    backgroundColor: theme.palette.primary.main,
-    padding: theme.spacing(2),
-    borderRadius: theme.spacing(1),
-    marginBottom: theme.spacing(0),
-    boxShadow:
-      "0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)",
+    marginTop: theme.spacing(2),
+    color: theme.palette.openTitle,
   },
   textField: {
     marginLeft: theme.spacing(1),
@@ -57,36 +40,8 @@ const useStyles = makeStyles({
     width: 300,
   },
   submit: {
-    margin: theme.spacing(1),
-    borderRadius: theme.spacing(1),
-  },
-  loginInstead: {
-    color: theme.palette.text.primary,
-    backgroundColor: theme.palette.common.white,
-    "&:hover": {
-      backgroundColor: theme.palette.common.white,
-      transform: "none",
-      "& .MuiButton-label": {
-        color: theme.palette.common.primary,
-      },
-    },
-    "& .MuiButton-label": {
-      color: theme.palette.text.primary,
-    },
-  },
-  whiteButton: {
-    color: theme.palette.common.white,
-    backgroundColor: theme.palette.common.white,
-    "&:hover": {
-      backgroundColor: theme.palette.primary.main,
-      transform: "scale(1.1)",
-      "& .MuiButton-label": {
-        color: theme.palette.common.white,
-      },
-    },
-    "& .MuiButton-label": {
-      color: theme.palette.text.primary,
-    },
+    margin: "auto",
+    marginBottom: theme.spacing(2),
   },
 });
 
@@ -107,7 +62,6 @@ const Signup = () => {
   const handleChange = (name) => (event) => {
     setValues({ ...values, [name]: event.target.value });
   };
-
   const clickSubmit = () => {
     const user = {
       name: values.name || undefined,
@@ -125,16 +79,13 @@ const Signup = () => {
       }
     });
   };
-
   return (
     <div>
       <Card className={classes.card}>
-        <div className={classes.header}>
+        <CardContent>
           <Typography variant="h6" className={classes.title}>
             Sign Up
           </Typography>
-        </div>
-        <CardContent>
           <TextField
             id="name"
             label="Name"
@@ -194,10 +145,10 @@ const Signup = () => {
         </CardContent>
         <CardActions>
           <Button
-            color="primary"
+            color="secondary"
             variant="contained"
             onClick={() => navigate("/login")}
-            className={classes.loginInstead}
+            className={classes.submit}
           >
             Log in instead?
           </Button>
@@ -205,12 +156,12 @@ const Signup = () => {
             color="primary"
             variant="contained"
             onClick={clickSubmit}
-            className={classes.whiteButton}
+            className={classes.submit}
           >
             Submit
           </Button>
           <Button
-            color="primary"
+            color="secondary"
             variant="contained"
             onClick={() =>
               setValues({
@@ -222,9 +173,9 @@ const Signup = () => {
                 error: "",
               })
             }
-            className={classes.whiteButton}
+            className={classes.submit}
           >
-            Clear form
+            clear form
           </Button>
         </CardActions>
       </Card>

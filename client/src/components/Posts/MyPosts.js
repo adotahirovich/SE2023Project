@@ -33,7 +33,7 @@ const MyPosts = ({ user }) => {
           My Posts
         </Typography>
         <Button
-          color="primary" // Change color prop to "primary" for the primary color (purple)
+          color="primary"
           variant="contained"
           onClick={() => navigate("/add_post")}
         >
@@ -57,5 +57,4 @@ const MyPosts = ({ user }) => {
     </div>
   );
 };
-
 export default MyPosts;

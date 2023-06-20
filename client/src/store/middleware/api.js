@@ -14,7 +14,7 @@ const api =
     next(action);
     try {
       const response = await axios.request({
-        baseURL: `http://localhost:5001/api/posts`,
+        baseURL: `http://localhost:3000/api/posts`,
         url,
         method,
         data,

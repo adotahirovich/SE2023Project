@@ -26,7 +26,6 @@ import PostAddIcon from "@mui/icons-material/PostAdd";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import Tooltip from "@mui/material/Tooltip";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -94,9 +93,14 @@ export default function Header({ setSearchParams, user, setUser }) {
 
     setState({ ...state, [anchor]: open });
   };
-  const list = (anchor) => (
+ const list = (anchor) => {
+  const isAuthenticated = user && Object.keys(user).length !== 0;
+
+  return (
     <Box
-      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+      sx={{
+        width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
+      }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -120,7 +124,7 @@ export default function Header({ setSearchParams, user, setUser }) {
         </ListItem>
       </List>
       <Divider />
-      {Object.keys(user).length !== 0 ? (
+      {isAuthenticated && user && user.name ? (
         <List>
           <ListItem disablePadding onClick={() => navigate("/my_profile")}>
             <ListItemButton>
@@ -197,6 +201,7 @@ export default function Header({ setSearchParams, user, setUser }) {
       )}
     </Box>
   );
+};
 
   return (
     <React.Fragment>
@@ -239,7 +244,7 @@ export default function Header({ setSearchParams, user, setUser }) {
                   onChange={handleSearchParams}
                 />
               </Search>
-              {Object.keys(user).length !== 0 ? (
+              {Object.keys(user || {}).length !== 0 ? (
                 <Button
                   variant="contained"
                   onClick={() => navigate("/my_profile")}

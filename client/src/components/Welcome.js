@@ -28,20 +28,20 @@ export default function Welcome() {
           }}
         >
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            Forum Site By Anel and Ado
+            Paragon blog app by Harun
           </Typography>
           <Typography variant="h2" component="div">
             WELCOME!
           </Typography>
 
           <Typography variant="body1">
-            This forum App is an application designed as an informative blog
-            to help "" to navigate through the fast changing "tech"
+            Paragon Blog App is an application designed as an informative blog
+            to help Paragon students to navigate through the fast changing tech
             world.
           </Typography>
           <CardActions>
             <Button variant="contained" onClick={() => navigate("/all_posts")}>
-              LOOK THE FORUM POSTS
+              LOOK THE BLOG POST
             </Button>
           </CardActions>
         </CardContent>

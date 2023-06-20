@@ -6,8 +6,18 @@
   "scripts": {
     "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
-
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harun-hadzagic/membership-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harun-hadzagic/membership-app/issues"
+  },
+  "homepage": "https://github.com/harun-hadzagic/membership-app#readme",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",

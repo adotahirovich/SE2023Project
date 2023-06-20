@@ -27,18 +27,7 @@ const useStyles = makeStyles({
   },
   title: {
     marginTop: theme.spacing(2),
-    color: "#FFFFFF",
-    backgroundColor: theme.palette.primary.main,
-    padding: theme.spacing(2),
-    borderRadius: theme.spacing(1),
-  },
-  header: {
-    backgroundColor: "#FFFFFF",
-    padding: theme.spacing(2),
-    borderRadius: theme.spacing(1),
-    marginBottom: theme.spacing(2),
-    boxShadow:
-      "0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)",
+    color: theme.palette.openTitle,
   },
   textField: {
     marginLeft: theme.spacing(1),
@@ -46,40 +35,12 @@ const useStyles = makeStyles({
     width: 300,
   },
   submit: {
-    margin: theme.spacing(1),
-    borderRadius: theme.spacing(1),
-  },
-  signUpButton: {
-    color: theme.palette.primary.main,
-    backgroundColor: theme.palette.common.white,
-    borderRadius: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    "&:hover": {
-      backgroundColor: theme.palette.common.white,
-      color: theme.palette.primary.main,
-    },
-  },
-  loginButton: {
-    color: theme.palette.common.white,
-    backgroundColor: theme.palette.common.white,
-    borderRadius: theme.spacing(1),
-    "&:hover": {
-      backgroundColor: theme.palette.primary.main,
-      color: theme.palette.common.white,
-    },
-  },
-  clearButton: {
-    color: theme.palette.primary.main,
-    backgroundColor: theme.palette.common.white,
-    borderRadius: theme.spacing(1),
-    "&:hover": {
-      backgroundColor: theme.palette.primary.main,
-      color: theme.palette.common.white,
-    },
+    margin: "auto",
+    marginBottom: theme.spacing(2),
   },
 });
 
-const CustomLogin = ({ setUser, getCookie, setToken }) => {
+const Login = ({ setUser, getCookie, setToken }) => {
   const classes = useStyles();
   const navigate = useNavigate();
   const [values, setValues] = useState({
@@ -89,7 +50,7 @@ const CustomLogin = ({ setUser, getCookie, setToken }) => {
     error: "",
   });
 
-  const handleLogin = () => {
+  const clickSubmit = () => {
     const user = {
       email: values.email || undefined,
       password: values.password || undefined,
@@ -116,12 +77,12 @@ const CustomLogin = ({ setUser, getCookie, setToken }) => {
     <Card className={classes.card}>
       <CardContent>
         <Typography variant="h6" className={classes.title}>
-          User Login
+          Sign In
         </Typography>
         <TextField
           id="email"
           type="email"
-          label="Email Address"
+          label="Email"
           className={classes.textField}
           value={values.email}
           onChange={handleChange("email")}
@@ -148,41 +109,39 @@ const CustomLogin = ({ setUser, getCookie, setToken }) => {
       </CardContent>
       <CardActions>
         <Button
-          color="primary"
+          color="secondary"
           variant="contained"
           onClick={() => navigate("/signup")}
-          className={classes.signUpButton}
+          className={classes.submit}
         >
-          Sign Up instead?
+          Signup instead?
         </Button>
-        <div>
-          <Button
-            color="primary"
-            variant="contained"
-            onClick={handleLogin}
-            className={classes.clearButton}
-          >
-            Log In
-          </Button>
-          <Button
-            color="primary"
-            variant="contained"
-            onClick={() =>
-              setValues({
-                password: "",
-                email: "",
-                redirectToReferrer: false,
-                error: "",
-              })
-            }
-            className={classes.clearButton}
-          >
-            Clear
-          </Button>
-        </div>
+        <Button
+          color="primary"
+          variant="contained"
+          onClick={clickSubmit}
+          className={classes.submit}
+        >
+          Submit
+        </Button>
+        <Button
+          color="secondary"
+          variant="contained"
+          onClick={() =>
+            setValues({
+              password: "",
+              email: "",
+              redirectToReferrer: false,
+              error: "",
+            })
+          }
+          className={classes.submit}
+        >
+          clear
+        </Button>
       </CardActions>
     </Card>
   );
 };
 
-export default CustomLogin;
+export default Login;

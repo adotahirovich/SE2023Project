@@ -6,9 +6,10 @@
         "dev": "nodemon --experimental-modules server/src/index.js",
         "heroku-postbuild": "npm install --force --prefix client && npm run build --prefix client"
     },
-    
-    
     "engines": {
-      "node": "16.x"
+        "node": "16.x"
+    },
+    "dependencies": {
+        "mongoose": "^7.3.0"
     }
-  }
+}

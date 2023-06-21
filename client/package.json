@@ -18,7 +18,7 @@
     "draft-js": "^0.11.7",
     "draft-js-import-html": "^1.4.1",
     "express": "^4.18.2",
-    "myapp": "file:..",
+    "mongoose": "^7.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.0",
@@ -29,10 +29,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "npm-run-all --parallel start:client start:server",
+    "start:client": "react-scripts start",
+    "start:server": "cd ../server && npm start",
+    "build": "npm-run-all --parallel build:client",
+    "build:client": "react-scripts build",
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -51,5 +53,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
   }
 }

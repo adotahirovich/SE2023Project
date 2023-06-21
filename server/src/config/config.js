@@ -1,4 +1,5 @@
-require("dotenv").config();
+import dotenv from 'dotenv';
+dotenv.config();
 
 const config = {
   mongo: process.env.MONGO || "mongodb+srv://anllq:sarajevo@cluster0.8we04.mongodb.net/?retryWrites=true&w=majority",

@@ -1,12 +1,12 @@
 {
-  "name": "membership-app",
+  "name": "myapp",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "type": "module",
+  "main": "src/index.js",
   "scripts": {
-    "start": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "cd .. && npm install --force && cd client && npm install && npm run build"
+    "start": "node .",
+    "dev": "nodemon .",
+    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",

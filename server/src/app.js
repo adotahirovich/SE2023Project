@@ -2,9 +2,9 @@ import express from "express";
 import compress from "compression";
 import helmet from "helmet";
 import cors from "cors";
-import userRoutes from "./routes/user.routes";
-import authRoutes from "./routes/auth.routes";
-import postRoutes from "./routes/post.routes";
+import userRoutes from "./routes/user.routes.js";
+import authRoutes from "./routes/auth.routes.js";
+import postRoutes from "./routes/post.routes.js";
 import cookieParser from "cookie-parser";
 
 const app = express();

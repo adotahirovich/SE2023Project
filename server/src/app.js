@@ -2,9 +2,9 @@ import express from "express";
 import compress from "compression";
 import helmet from "helmet";
 import cors from "cors";
-import userRoutes from "./routes/user.routes.js";
-import authRoutes from "./routes/auth.routes.js";
-import postRoutes from "./routes/post.routes.js";
+import userRoutes from "./routes/user.routes";
+import authRoutes from "./routes/auth.routes";
+import postRoutes from "./routes/post.routes";
 import cookieParser from "cookie-parser";
 
 const app = express();
@@ -22,9 +22,7 @@ app.use("/", postRoutes);
 
 app.use((err, req, res, next) => {
   if (err.name === "UnauthorizedError") {
-    res.status(401).json({ error:
-      ` ${err.name}: ${err.message}
-      ` });
+    res.status(401).json({ error: `${err.name}: ${err.message}` });
   }
 });
 

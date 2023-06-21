@@ -28,14 +28,14 @@ export default function Welcome() {
           }}
         >
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            Forum app by Anel and Ado
+            Forum App
           </Typography>
           <Typography variant="h2" component="div">
             WELCOME!
           </Typography>
 
           <Typography variant="body1">
-            This Forum App is an application designed as an informative blog
+            Forum App is an application designed as an informative blog
             to help the world.
           </Typography>
           <CardActions>

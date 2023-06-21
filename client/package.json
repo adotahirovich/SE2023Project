@@ -18,7 +18,6 @@
     "draft-js": "^0.11.7",
     "draft-js-import-html": "^1.4.1",
     "express": "^4.18.2",
-    "mongoose": "^7.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.0",
@@ -36,6 +35,9 @@
     "build:client": "react-scripts build",
     "heroku-postbuild": "npm run build"
   },
+  
+  
+  
   "eslintConfig": {
     "extends": [
       "react-app",

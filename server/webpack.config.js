@@ -10,11 +10,6 @@ module.exports = {
     publicPath: "/dist/",
   },
   externals: [nodeExternals()],
-  resolve: {
-    fallback: {
-      "path": require.resolve("path-browserify"),
-    },
-  },
   module: {
     rules: [
       {

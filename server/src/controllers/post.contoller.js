@@ -1,6 +1,6 @@
-import Post from "../models/post.model.js";
+import Post from "../models/post.model";
 import _ from "lodash";
-import errorHandler from "../helpers/dbErrorHandler.js";
+import errorHandler from "../helpers/dbErrorHandler";
 
 const create = (req, res, next) => {
   const post = new Post(req.body);

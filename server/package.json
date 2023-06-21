@@ -1,24 +1,23 @@
 {
-  "name": "myapp",
+  "name": "membership-app",
   "version": "1.0.0",
-  "type": "module",
-  "main": "src/index.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node .",
-    "dev": "nodemon .",
-    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/harun-hadzagic/membership-app.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/harun-hadzagic/membership-app/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/harun-hadzagic/membership-app#readme",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
@@ -38,7 +37,6 @@
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "mongoose": "^6.9.1",
-    "path-browserify": "^1.0.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
     "webpack-node-externals": "^3.0.0"

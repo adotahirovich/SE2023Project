@@ -1,0 +1,14 @@
+{
+    "name": "app",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "start": "node server/src/index.js",
+        "heroku-postbuild": "cd client && npm install && npm run build"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.22.5",
+        "@babel/core": "^7.22.5",
+        "@babel/preset-env": "^7.22.5"
+    }
+}

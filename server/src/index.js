@@ -14,15 +14,14 @@ mongoose
   .then(() => console.log("Database connected"))
   .catch((error) => console.log("Nije proslo", error));
 
-  if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, 'client/build')));
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(dirname, '../client/build')));
 
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-    });
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(dirname, '../client', 'build', 'index.html'));
+  });
 }
 
 app.listen(config.port, (error) => {
   if (error) return console.log(error);
-  console.log(`Server is listening on port ${config.port}`);
 });
